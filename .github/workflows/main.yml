@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      url: 'testeconsultafilmes.com'
+      url: 'https://testeconsultafilmes.com'
     needs: build
     steps:
-    - name: Run a one-line script
-      run: echo Deploy dev
+    - name: Executando testes...
+      run: mvn test
       
   deploy-hom:
     runs-on: ubuntu-latest
     environment:
       name: hom
-      url: 'testeconsultafilmes.com'
+      url: 'https://testeconsultafilmes.com'
     needs: deploy-dev
     steps:
     - name: Run a one-line script
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: prod
-      url: 'testeconsultafilmes.com'
+      url: 'https://testeconsultafilmes.com'
     needs: deploy-hom
     steps:
     - name: Run a one-line script
