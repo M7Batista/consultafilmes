@@ -1,0 +1,40 @@
+name: TestAction
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello world!
+
+  deploy-dev:
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: 'testeconsultafilmes.com'
+    needs: build
+    steps:
+    - name: Run a one-line script
+      run: echo Deploy dev
+      
+  deploy-hom:
+    runs-on: ubuntu-latest
+    environment:
+      name: hom
+      url: 'testeconsultafilmes.com'
+    needs: deploy-dev
+    steps:
+    - name: Run a one-line script
+      run: echo Deploy hom
+      
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: 'testeconsultafilmes.com'
+    needs: deploy-hom
+    steps:
+    - name: Run a one-line script
+      run: echo Deploy prod
