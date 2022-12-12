@@ -9,9 +9,10 @@
       Então sera retornado os dados do filme <titulo>
 
       Exemplos:
-      | imdbID      | titulo          |
-      | "tt0372784" | "Batman Begins" |
-      | "tt0499549" | "Avatar"        |
+      | imdbID       | titulo                |
+      | "tt0372784"  | "Batman Begins"       |
+      | "tt0499549"  | "Avatar"              |
+      | "tt18104382" | "Vingadores A Origem" |
 
 
       @Negativo
@@ -23,3 +24,4 @@
       Exemplos:
       | imdbID      | errorMessage          |
       | "tt9999999" | "Error getting data." |
+      | "tt0000000" | "Error getting data." |

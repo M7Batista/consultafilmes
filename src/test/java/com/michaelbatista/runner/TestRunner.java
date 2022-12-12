@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
     features = "src/test/resources/features",
     glue = "com.michaelbatista.stepDefinitions",
     plugin = {"pretty" , "json:target/cucumber-reports/report.json", "html:target/cucumber-reports/report.html"}
+    tags = ("@Negativo")
 )
 public class TestRunner {
     
