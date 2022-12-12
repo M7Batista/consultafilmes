@@ -15,6 +15,7 @@ public class RqConsultaFilmes {
                 .param("i", idFilme)
                 .get(baseURI);
 
+                response.prettyPrint();
         return response;
     }
 }

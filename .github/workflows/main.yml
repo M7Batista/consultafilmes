@@ -1,6 +1,10 @@
 name: TestAction
 on:
-  workflow_dispatch:
+  #workflow_dispatch:
+  push:
+    branchs:
+      - main
+      - develop
 
 jobs:
   build:

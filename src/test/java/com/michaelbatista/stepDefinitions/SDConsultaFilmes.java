@@ -24,10 +24,18 @@ public class SDConsultaFilmes {
     public void forInformadoOID(String idFilme){
         response = rqConsultaFilmes.getFilme(idFilme);
     }
+    @Quando("for informado um ID invalido {string}")
+    public void forInformadoUmIDInvalido(String idFilme){
+        response = rqConsultaFilmes.getFilme(idFilme);
+    }
     @Então("sera retornado os dados do filme {string}")
     public void seraRetornadoOsDadosDoFilme(String title){
         assertEquals(200, response.getStatusCode());
         assertEquals(title, response.then().extract().path("Title"));
     }
-    
+    @Então("sera retornado o erro {string}")
+    public void seraRetornadoOErro(String errorMsg){
+        assertEquals(200, response.getStatusCode());
+        assertEquals(errorMsg, response.then().extract().path("Error"));
+    }
 }
