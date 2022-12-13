@@ -1,4 +1,4 @@
-name: TestAction
+name: Publishing Process
 on:
   workflow_dispatch:
 
