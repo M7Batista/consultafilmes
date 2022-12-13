@@ -1,19 +1,16 @@
 name: TestAction
 on:
-  #workflow_dispatch:
-  push:
-    branchs:
-      - develop
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Run a one-line script
         run: echo Hello world!
 
   deploy-dev:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     environment:
       name: dev
       url: 'http://www.omdbapi.com/'
@@ -30,7 +27,7 @@ jobs:
         #run: mvn -B package --file pom.xml
       
   deploy-hom:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     environment:
       name: hom
       url: 'http://www.omdbapi.com/'
@@ -40,7 +37,7 @@ jobs:
       run: echo Deploy hom
       
   deploy-prod:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     environment:
       name: prod
       url: 'http://www.omdbapi.com/'

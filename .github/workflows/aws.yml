@@ -19,8 +19,10 @@ jobs:
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
+        ARGS: "-rltgoDzvO"
         SOURCE: "./"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: "/home/ec2-user"
+        EXCLUDE: ".git, .gitignore, .vscode, target/"
        #https://www.youtube.com/watch?v=i8aRDekvyS0
