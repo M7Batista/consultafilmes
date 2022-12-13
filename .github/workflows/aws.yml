@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: copy files with SSH
-      uses: easingthe/ssh-deploy@main
+      uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
         SOURCE: "./"
