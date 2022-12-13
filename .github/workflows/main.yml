@@ -3,7 +3,6 @@ on:
   #workflow_dispatch:
   push:
     branchs:
-      - main
       - develop
 
 jobs:
@@ -17,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      url: 'https://testeconsultafilmes.com'
+      url: 'http://www.omdbapi.com/'
     needs: build
     steps:
       - uses: actions/checkout@v3
@@ -34,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: hom
-      url: 'https://testeconsultafilmes.com'
+      url: 'http://www.omdbapi.com/'
     needs: deploy-dev
     steps:
     - name: Run a one-line script
@@ -44,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: prod
-      url: 'https://testeconsultafilmes.com'
+      url: 'http://www.omdbapi.com/'
     needs: deploy-hom
     steps:
     - name: Run a one-line script

@@ -1,7 +1,12 @@
-# consultafilmes
-Projeto de Automação de testes de api com rest assured
+# ConsultaFilmes
+Projeto de Automação de testes de API - Execução via Github Actions
 
-##Ferramentas:
-- Junit
+## API utilizada nos testes
+http://www.omdbapi.com/
+
+## Ferramentas:
+- JUnit
 - Cucumber
 - RestAssured
+- Maven
+- JAVA
