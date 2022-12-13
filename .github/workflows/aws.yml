@@ -22,4 +22,4 @@ jobs:
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: "/home/ec2-user"
         EXCLUDE: ".git, .gitignore, .vscode, target/"
-       #https://www.youtube.com/watch?v=i8aRDekvyS0
+       #FONTE: https://www.youtube.com/watch?v=i8aRDekvyS0

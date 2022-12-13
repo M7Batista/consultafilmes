@@ -16,7 +16,7 @@ jobs:
       url: 'http://www.omdbapi.com/'
     needs: build
     steps:
-      - name: Run a one-line script
+    - name: Run a one-line script
       run: echo Deploy dev
       
   deploy-hom:
@@ -38,3 +38,4 @@ jobs:
     steps:
     - name: Run a one-line script
       run: echo Deploy prod
+      #FONTE: https://www.youtube.com/watch?v=Oe-Yu3YP0YQ
