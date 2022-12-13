@@ -7,26 +7,20 @@ on:
 
 
 jobs:
-  build:
-
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Install Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: Install npm dependencies
-      run: npm install
-    - name: Run build task
-      run: npm run build --if-present
-    - name: Deploy to Server
+    - name: Checkout the files
+      uses: actions/checkout@v3
+
+    - name: copy files with SSH
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
         SOURCE: "./"
-        REMOTE_HOST:  "ec2-3-90-213-82.compute-1.amazonaws.com"
-        REMOTE_ USER: "ec2-user"
+        REMOTE_HOST: "ec2-3-90-213-82.compute-1.amazonaws.com"
+        REMOTE_USER: "ec2-user"
         TARGET: "/home/ec2-user"
        #https://www.youtube.com/watch?v=i8aRDekvyS0
