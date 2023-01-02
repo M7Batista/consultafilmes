@@ -1,7 +1,7 @@
 name: Running Tests
 on:
   push:
-    branches: [ "main" ]
+    workflow_dispatch:
 
 jobs:
   config-test:

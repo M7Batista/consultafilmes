@@ -19,8 +19,8 @@ jobs:
 
   allure-report:
     steps:
-    - name: GerandoAllure Report
-      uses: allure generate -c reports/allure-results -o reports/allure-results-html
+    - name: Gerando Allure Report
+      run: allure generate -c reports/allure-results -o reports/allure-results-html
 
   deploy:
     name: Deploy
