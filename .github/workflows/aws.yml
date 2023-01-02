@@ -17,16 +17,9 @@ jobs:
       - name: Executando testes
         run: mvn test
 
-  allure-report:
-    runs-on: ubuntu-20.04
-    steps:
-    - name: Gerando Allure Report
-      run: allure generate -c reports/allure-results -o reports/allure-results-html
-
   deploy:
     name: Deploy
     runs-on: ubuntu-20.04
-
     steps:
     - name: Checkout the files
       uses: actions/checkout@v3
