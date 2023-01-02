@@ -12,8 +12,9 @@ import org.junit.runner.RunWith;
     snippets = SnippetType.CAMELCASE,
     features = "src/test/resources/features",
     glue = "com.michaelbatista.stepDefinitions",
-    plugin = {"pretty" , "json:target/cucumber-reports/report.json", "html:target/cucumber-reports/report.html"}
+    plugin = {"pretty" ,
+            "json:target/cucumber-reports/report.json", "html:target/cucumber-reports/report.html"}
 )
 public class TestRunner {
-    
+    //mvn test -f pom.xml
 }

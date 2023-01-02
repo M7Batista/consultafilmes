@@ -5,6 +5,23 @@ on:
     branches: [ "main" ]
 
 jobs:
+  config-test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configurando JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Executando testes
+        run: mvn test
+
+  allure-report:
+    steps:
+    - name: GerandoAllure Report
+      uses: allure generate -c reports/allure-results -o reports/allure-results-html
+
   deploy:
     name: Deploy
     runs-on: ubuntu-20.04
