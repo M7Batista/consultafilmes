@@ -18,6 +18,7 @@ jobs:
         run: mvn test
 
   allure-report:
+    runs-on: ubuntu-20.04
     steps:
     - name: Gerando Allure Report
       run: allure generate -c reports/allure-results -o reports/allure-results-html
